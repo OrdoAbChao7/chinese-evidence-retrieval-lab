@@ -1,0 +1,31 @@
+experiment:
+  id: e2_inbatch
+  description: Shared-weight dual encoder trained with in-batch contrastive negatives.
+reproducibility:
+  seeds: [42, 2026, 3407]
+  deterministic: true
+data:
+  processed_dir: data/processed/smoke
+  manifest: data/processed/smoke/manifest.json
+  train_pairs: data/processed/smoke/train_pairs.jsonl
+model:
+  checkpoint: BAAI/bge-small-zh-v1.5
+  pooling: mean
+  normalize_embeddings: true
+  query_max_length: 32
+  passage_max_length: 256
+training:
+  epochs: 3
+  batch_size: 16
+  gradient_accumulation_steps: 1
+  learning_rate: 2.0e-5
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  temperature: 0.05
+  amp: true
+  checkpoint_metric: ndcg@10
+metrics:
+  primary: ndcg@10
+  report: [ndcg@10, mrr@10, recall@50, recall@100, latency_ms]
+output:
+  run_dir: artifacts/runs/e2_inbatch

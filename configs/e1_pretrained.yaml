@@ -1,0 +1,23 @@
+experiment:
+  id: e1_pretrained
+  description: Frozen pretrained Chinese dual-encoder baseline.
+reproducibility:
+  seeds: [42, 2026, 3407]
+  deterministic: true
+data:
+  processed_dir: data/processed/smoke
+  manifest: data/processed/smoke/manifest.json
+model:
+  checkpoint: BAAI/bge-small-zh-v1.5
+  pooling: mean
+  normalize_embeddings: true
+  query_max_length: 32
+  passage_max_length: 256
+retrieval:
+  backend: exact_dot_product
+  top_k: 100
+metrics:
+  primary: ndcg@10
+  report: [ndcg@10, mrr@10, recall@50, recall@100, latency_ms]
+output:
+  run_dir: artifacts/runs/e1_pretrained

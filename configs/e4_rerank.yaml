@@ -1,0 +1,20 @@
+experiment:
+  id: e4_rerank
+  description: Rerank the E3 top-100 candidate passages with a Cross-Encoder.
+reproducibility:
+  seeds: [42, 2026, 3407]
+  deterministic: true
+data:
+  processed_dir: data/processed/smoke
+  manifest: data/processed/smoke/manifest.json
+model:
+  candidate_retriever: artifacts/runs/e3_hard_negative/best_checkpoint.pt
+  reranker_checkpoint: BAAI/bge-reranker-base
+  rerank_top_k: 100
+  query_max_length: 32
+  pair_max_length: 320
+metrics:
+  primary: ndcg@10
+  report: [ndcg@10, mrr@10, recall@50, recall@100, rerank_latency_ms]
+output:
+  run_dir: artifacts/runs/e4_rerank

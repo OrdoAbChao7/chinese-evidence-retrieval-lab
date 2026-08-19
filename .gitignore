@@ -1,0 +1,31 @@
+# Python and local environments
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+
+# Raw datasets, checkpoints, indexes and large run outputs
+data/raw/
+data/processed/
+artifacts/checkpoints/
+artifacts/indexes/
+artifacts/runs/
+*.pt
+*.bin
+*.safetensors
+*.faiss
+
+# Keep directories, README files and selected compact result artifacts
+!data/README.md
+!artifacts/**/.gitkeep
+
+# OS/editor artifacts
+.DS_Store
+.vscode/
+.idea/

@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chinese-evidence-retrieval-lab"
+version = "0.1.0"
+description = "Reproducible Chinese two-stage retrieval experiments for evidence-aware research assistants."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "OrdoAbChao"}]
+dependencies = [
+  "numpy>=1.26,<3",
+  "PyYAML>=6.0,<7",
+  "torch>=2.3,<3",
+]
+
+[project.optional-dependencies]
+train = [
+  "transformers>=4.46,<5",
+  "tqdm>=4.66,<5",
+]
+faiss = ["faiss-cpu>=1.8,<2"]
+dev = [
+  "pytest>=8.0,<9",
+  "ruff>=0.6,<1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

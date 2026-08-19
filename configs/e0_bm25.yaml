@@ -1,0 +1,17 @@
+experiment:
+  id: e0_bm25
+  description: Lexical BM25 retrieval baseline on a manifest-defined T2Ranking subset.
+reproducibility:
+  seeds: [42, 2026, 3407]
+  deterministic: true
+data:
+  processed_dir: data/processed/smoke
+  manifest: data/processed/smoke/manifest.json
+retrieval:
+  backend: bm25
+  top_k: 100
+metrics:
+  primary: ndcg@10
+  report: [ndcg@10, mrr@10, recall@50, recall@100, latency_ms]
+output:
+  run_dir: artifacts/runs/e0_bm25
