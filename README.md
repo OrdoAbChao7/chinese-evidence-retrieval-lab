@@ -1,4 +1,8 @@
-# Chinese Evidence Retrieval Lab
+<div align="center">
+  <h1>chinese-evidence-retrieval-lab</h1>
+  **English** | [**中文**](./README_zh-CN.md)
+</div>
+<br>
 
 > A reproducible PyTorch laboratory for evaluating Chinese two-stage retrieval strategies used by evidence-aware research assistants.
 
