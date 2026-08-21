@@ -4,6 +4,20 @@
 </div>
 <br>
 
+
+
+<!-- portfolio-authenticity:start -->
+## 项目状态
+
+**当前阶段：**实验脚手架。
+
+**为什么做这个项目：**我把检索实验从 CountyResearchAI 中拆开，以便在改变上游研究工作流前，先在公开数据上检验排序策略。
+
+**适用边界：**仓库当前提供实验协议与脚手架；在发布带版本的运行结果前，不会声称获得基准提升。排序相关性不等于事实正确性，基准结果也不能自动迁移到县域研究。
+
+关于仍需补充的验证证据和维护约定，请参阅 [PROJECT_STATUS.md](./PROJECT_STATUS.md)。
+<!-- portfolio-authenticity:end -->
+
 > 一个可复现的 PyTorch 实验室，用于评估证据感知型研究助理所使用的中文两阶段检索策略。
 
 `chinese-evidence-retrieval-lab` 是 [CountyResearchAI](https://github.com/OrdoAbChao7/CountyResearchAI) 的实验配套项目。在将任一策略集成到上游研究助理之前，它先在公开的中文排序基准上评估该策略是否提升了段落的**相关性**。

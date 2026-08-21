@@ -4,6 +4,20 @@
 </div>
 <br>
 
+
+
+<!-- portfolio-authenticity:start -->
+## Project status
+
+**Stage:** Experiment scaffold.
+
+**Why I built it:** I separated retrieval experiments from CountyResearchAI so that a ranking decision can be tested on public data before it changes an upstream research workflow.
+
+**Boundary:** The repository currently provides a protocol and scaffolded experiments; it does not claim benchmark gains until versioned runs are published. Ranking relevance is not factual correctness, and benchmark results do not automatically transfer to county research.
+
+See [PROJECT_STATUS.md](./PROJECT_STATUS.md) for the evidence still needed and the maintenance rule.
+<!-- portfolio-authenticity:end -->
+
 > A reproducible PyTorch laboratory for evaluating Chinese two-stage retrieval strategies used by evidence-aware research assistants.
 
 `chinese-evidence-retrieval-lab` is the experimental companion to [CountyResearchAI](https://github.com/OrdoAbChao7/CountyResearchAI). It evaluates whether retrieval and re-ranking strategies improve **passage relevance** on a public Chinese ranking benchmark before any strategy is integrated into an upstream research assistant.
